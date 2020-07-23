@@ -25,6 +25,9 @@ Blockly.Themes.Classic.defaultBlockStyles = {
   "list_blocks": {
     "colourPrimary": "260"
   },
+  "dict_blocks": {
+    "colourPrimary": "260"
+  },
   "logic_blocks": {
     "colourPrimary": "210"
   },
@@ -57,6 +60,9 @@ Blockly.Themes.Classic.categoryStyles = {
     "colour": "20"
   },
   "list_category": {
+    "colour": "260"
+  },
+  "dict_category": {
     "colour": "260"
   },
   "logic_category": {

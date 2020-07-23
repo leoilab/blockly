@@ -295,7 +295,7 @@ Blockly.JavaScript['text_print'] = function(block) {
   // Print statement.
   var msg = Blockly.JavaScript.valueToCode(block, 'TEXT',
       Blockly.JavaScript.ORDER_NONE) || '\'\'';
-  return 'window.alert(' + msg + ');\n';
+  return 'console.log(' + msg + ');\n';
 };
 
 Blockly.JavaScript['text_prompt_ext'] = function(block) {
@@ -364,4 +364,28 @@ Blockly.JavaScript['text_reverse'] = function(block) {
       Blockly.JavaScript.ORDER_MEMBER) || '\'\'';
   var code = text + '.split(\'\').reverse().join(\'\')';
   return [code, Blockly.JavaScript.ORDER_MEMBER];
+};
+
+Blockly.JavaScript['text_chomp'] = function(block) {
+    var value_regex = Blockly.JavaScript.valueToCode(block, 'regex', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_string = Blockly.JavaScript.valueToCode(block, 'string', Blockly.JavaScript.ORDER_ATOMIC);
+    var value_buffer = Blockly.JavaScript.valueToCode(block, 'buffer', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    var functionName = Blockly.JavaScript.provideFunction_(
+        'chomp',
+        ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+         '(regex, buffer) {',
+         "  var regexp = new RegExp(['(^', regex, ')(.*)'].join(''));" +
+         '  var matches = '+value_string+'.match(regexp);'+
+         '  if(matches != null && matches.length == 3){'+
+         '    buffer.push(matches[1]);'+
+         '    '+value_string+' = matches[2];'+
+         '    return true;'+
+         '  }'+
+         '  return false;'+
+         '}']);
+
+    var code = functionName+ '(' + value_regex + ', ' + value_buffer + ')';
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
 };

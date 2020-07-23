@@ -88,6 +88,32 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "mutator": "text_join_mutator"
 
   },
+    {
+        "type": "text_chomp",
+        "message0": "chomp %1 from string %2 to buffer %3",
+        "args0": [
+            {
+                "type": "input_value",
+                "name": "regex",
+                "check": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "string",
+                "check": "String"
+            },
+            {
+                "type": "input_value",
+                "name": "buffer",
+                "check": "Array"
+            }
+        ],
+        "inputsInline": true,
+        "output": "Boolean",
+        "colour": 105,
+        "tooltip": "",
+        "helpUrl": ""
+    },
   {
     "type": "text_create_join_container",
     "message0": "%{BKY_TEXT_CREATE_JOIN_TITLE_JOIN} %1 %2",

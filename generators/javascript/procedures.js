@@ -111,3 +111,8 @@ Blockly.JavaScript['procedures_ifreturn'] = function(block) {
   code += '}\n';
   return code;
 };
+
+Blockly.JavaScript['procedures_return'] = function(block) {
+    // return value from a procedure.
+    return ["return",(Blockly.JavaScript.valueToCode(block, 'VALUE', Blockly.JavaScript.ORDER_NONE) || 'null'),";"].join(" ");
+};

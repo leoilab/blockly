@@ -615,6 +615,10 @@ Blockly.checkBlockColourConstants = function() {
       'LISTS_HUE', ['Blocks', 'lists', 'HUE'], undefined);
   Blockly.checkBlockColourConstant_(
       'LISTS_HUE', ['Constants', 'Lists', 'HUE'], 260);
+    Blockly.checkBlockColourConstant_(
+        'DICTS_HUE', ['Blocks', 'dicts', 'HUE'], undefined);
+    Blockly.checkBlockColourConstant_(
+        'DICTS_HUE', ['Constants', 'Dicts', 'HUE'], 260);
   Blockly.checkBlockColourConstant_(
       'COLOUR_HUE', ['Blocks', 'colour', 'HUE'], undefined);
   Blockly.checkBlockColourConstant_(

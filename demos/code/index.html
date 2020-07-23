@@ -10,10 +10,6 @@
   <script src="../../blockly_compressed.js"></script>
   <script src="../../blocks_compressed.js"></script>
   <script src="../../javascript_compressed.js"></script>
-  <script src="../../python_compressed.js"></script>
-  <script src="../../php_compressed.js"></script>
-  <script src="../../lua_compressed.js"></script>
-  <script src="../../dart_compressed.js"></script>
   <script src="code.js"></script>
 </head>
 <body>
@@ -36,14 +32,6 @@
             <td id="tab_blocks" class="tabon">...</td>
             <td class="tabmin tab_collapse">&nbsp;</td>
             <td id="tab_javascript" class="taboff tab_collapse">JavaScript</td>
-            <td class="tabmin tab_collapse">&nbsp;</td>
-            <td id="tab_python" class="taboff tab_collapse">Python</td>
-            <td class="tabmin tab_collapse">&nbsp;</td>
-            <td id="tab_php" class="taboff tab_collapse">PHP</td>
-            <td class="tabmin tab_collapse">&nbsp;</td>
-            <td id="tab_lua" class="taboff tab_collapse">Lua</td>
-            <td class="tabmin tab_collapse">&nbsp;</td>
-            <td id="tab_dart" class="taboff tab_collapse">Dart</td>
             <td class="tabmin tab_collapse">&nbsp;</td>
             <td id="tab_xml" class="taboff tab_collapse">XML</td>
             <td class="tabmin">&nbsp;</td>
@@ -72,10 +60,6 @@
   </table>
   <div id="content_blocks" class="content"></div>
   <pre id="content_javascript" class="content prettyprint lang-js"></pre>
-  <pre id="content_python" class="content prettyprint lang-py"></pre>
-  <pre id="content_php" class="content prettyprint lang-php"></pre>
-  <pre id="content_lua" class="content prettyprint lang-lua"></pre>
-  <pre id="content_dart" class="content prettyprint lang-dart"></pre>
   <textarea id="content_xml" class="content" wrap="off"></textarea>
 
   <xml xmlns="https://developers.google.com/blockly/xml" id="toolbox" style="display: none">
@@ -121,6 +105,7 @@
       <block type="math_number">
         <field name="NUM">123</field>
       </block>
+      <block type="math_number_from_text"></block>
       <block type="math_arithmetic">
         <value name="A">
           <shadow type="math_number">
@@ -294,6 +279,7 @@
           </shadow>
         </value>
       </block>
+      <block type="text_chomp"></block>
     </category>
     <category name="%{BKY_CATLISTS}" colour="%{BKY_LISTS_HUE}">
       <block type="lists_create_with">
@@ -345,6 +331,15 @@
         </value>
       </block>
       <block type="lists_sort"></block>
+    </category>
+    <category name="Dictionaries" colour="260">
+      <block type="dicts_create_empty"></block>
+      <block type="dicts_create_with">
+          <mutation items="3"></mutation>
+      </block>
+      <block type="dicts_get"></block>
+      <block type="dicts_set"></block>
+      <block type="dicts_contains"></block>
     </category>
     <category name="%{BKY_CATCOLOUR}" colour="%{BKY_COLOUR_HUE}">
       <block type="colour_picker"></block>

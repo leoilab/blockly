@@ -192,18 +192,6 @@ function packageNode() {
       },{
         name: 'BlocklyJS',
         cjs: './javascript',
-      },{
-        name: 'BlocklyPython',
-        cjs: './python',
-      },{
-        name: 'BlocklyPHP',
-        cjs: './php',
-      },{
-        name: 'BlocklyLua',
-        cjs: './lua',
-      }, {
-        name: 'BlocklyDart',
-        cjs: './dart',
       }]))
     .pipe(gulp.rename('node.js'))
     .pipe(gulp.dest(packageDistribution));
@@ -380,10 +368,6 @@ const package = gulp.parallel(
   packageBlockly,
   packageBlocks,
   packageJavascript,
-  packagePython,
-  packageLua,
-  packageDart,
-  packagePHP,
   packageLocales,
   packageMedia,
   packageUMDBundle,

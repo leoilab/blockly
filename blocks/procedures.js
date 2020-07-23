@@ -1070,3 +1070,19 @@ Blockly.Blocks['procedures_ifreturn'] = {
    */
   FUNCTION_TYPES: ['procedures_defnoreturn', 'procedures_defreturn']
 };
+
+Blockly.Blocks['procedures_return'] = {
+  /**
+   * Block for conditionally returning a value from a procedure.
+   * @this {Blockly.Block}
+   */
+  init: function() {
+    this.appendValueInput('VALUE')
+          .appendField("return");
+    this.setInputsInline(true);
+    this.setPreviousStatement(true);
+    this.setNextStatement(true);
+    this.setStyle('procedure_blocks');
+    this.hasReturnValue_ = true;
+  }
+};

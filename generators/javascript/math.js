@@ -407,3 +407,10 @@ Blockly.JavaScript['math_atan2'] = function(block) {
   return ['Math.atan2(' + argument1 + ', ' + argument0 + ') / Math.PI * 180',
       Blockly.JavaScript.ORDER_DIVISION];
 };
+
+Blockly.JavaScript['math_number_from_text'] = function(block) {
+    // Arctangent of point (X, Y) in degrees from -180 to 180.
+    var argument0 = Blockly.JavaScript.valueToCode(block, 'text',
+                                                   Blockly.JavaScript.ORDER_COMMA) || '0';
+    return ['Number('+argument0+')', Blockly.JavaScript.ORDER_FUNCTION_CALL];
+};

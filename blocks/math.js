@@ -48,6 +48,16 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "%{BKY_MATH_NUMBER_TOOLTIP}",
     "extensions": ["parent_tooltip_when_inline"]
   },
+    {
+        "type": "math_number_from_text",
+        "message0": "number from text %1",
+        "args0": [{
+            "type": "input_value",
+            "name": "text"
+        }],
+        "output": "Number",
+        "style": "math_blocks"
+    },
 
   // Block for basic arithmetic operator.
   {

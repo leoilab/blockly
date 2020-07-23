@@ -316,11 +316,11 @@ function buildDart() {
  *     dart_compressed.js
  */
 const buildGenerators = gulp.parallel(
-  buildJavascript,
-  buildPython,
-  buildPHP,
-  buildLua,
-  buildDart
+  buildJavascript
+  //buildPython,
+  //buildPHP,
+  //buildLua,
+  //buildDart
 );
 
 /**
