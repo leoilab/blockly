@@ -67,7 +67,24 @@ Blockly.JavaScript['logic_compare'] = function(block) {
       Blockly.JavaScript.ORDER_EQUALITY : Blockly.JavaScript.ORDER_RELATIONAL;
   var argument0 = Blockly.JavaScript.valueToCode(block, 'A', order) || '0';
   var argument1 = Blockly.JavaScript.valueToCode(block, 'B', order) || '0';
-  var code = argument0 + ' ' + operator + ' ' + argument1;
+
+  if (operator == '==' || operator == '!='){
+    var functionName = Blockly.JavaScript.provideFunction_(
+        'equals',
+        ['function ' + Blockly.JavaScript.FUNCTION_NAME_PLACEHOLDER_ +
+            '(a, b) {',
+         '  if (Array.isArray(a)) {',
+         '    return a.length === b.length &&',
+         '    a.every((val, index) => equals(val, b[index]));',
+         '  } else if (typeof a === "object"){',
+         '    return Object.keys(a).every(key => equals(a[key], b[key]));',
+         '  } else {return a === b}',
+         '}']);
+
+    var code = functionName + '(' + argument0 + ', ' + argument1 + ')';
+  } else {
+    var code = argument0 + ' ' + operator + ' ' + argument1;
+  }
   return [code, order];
 };
 
